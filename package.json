@@ -1,6 +1,6 @@
 {
   "name": "chickendinosaur-footprint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Consolidates redundant code based on the selected compressor.",
   "main": "src/GulpFootprint.js",
   "scripts": {
