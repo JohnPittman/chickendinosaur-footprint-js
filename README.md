@@ -67,7 +67,7 @@ footprint.Transformer({
 .transform(footprint.Transform.babel)
 .transform(footprint.Transform.usestrict)
 .dest('./dist/babelMock.transformed.js')
-```javascript
+```
 
 <h4>Chaining multiple input/outputs</h4>
 
@@ -83,7 +83,7 @@ footprint.Transformer({
 .src('./test/mock/babelMock.dirty.js')
 .transform(footprint.Transform.babel)
 .dest('./dist/babelMock.transformed.js');
-```javascript
+```
 
 <h3>Example</h3>
 
