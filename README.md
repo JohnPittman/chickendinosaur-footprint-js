@@ -29,7 +29,7 @@ npm install chickendinosaur-footprint
 <h4>Transform types</h4>
 
 - footprint.Transform.usestrict
-- footprint.Transform.babel
+- footprint.Transform.babel (uses footprint.Transform.usestrict)
 
 <h4>Using the transformer in debug</h4>
 
@@ -39,9 +39,9 @@ var footprint = require('chickendinosaur-footprint');
 footprint.Transformer({
 		debug:true
 	})
-	.src('./dist/someclass.bundle.js')
+	.src('./test/mock/babelMock.dirty.js')
 	.transform(footprint.Transform.babel)
-	.dest('./dist/someclass.footprint.js');
+	.dest('./dist/babelMock.transformed.js');
 ```
 
 <h4>Using a transform as standalone</h4>
@@ -50,9 +50,39 @@ footprint.Transformer({
 var footprint = require('chickendinosaur-footprint');
 var fs = require('fs');
 
-var text = fs.readFileSync('./babelBundle.js', 'utf-8');
+var text = fs.readFileSync('./test/mock/babelMock.dirty.js', 'utf-8');
 
 var output = footprint.Transform.babel(text);
+```
+
+<h4>Chaining Transforms</h4>
+
+```
+var footprint = require('chickendinosaur-footprint');
+
+footprint.Transformer({
+	debug:true
+})
+.src('./test/mock/babelMock.dirty.js')
+.transform(footprint.Transform.babel)
+.transform(footprint.Transform.usestrict)
+.dest('./dist/babelMock.transformed.js')
+```
+
+<h4>Chaining multiple input/outputs</h4>
+
+```
+var footprint = require('chickendinosaur-footprint');
+
+footprint.Transformer({
+	debug:true
+})
+.src('./test/mock/usestrictMock.dirty.js')
+.transform(footprint.Transform.usestrict)
+.dest('./dist/usestrictMock.transformed.js')
+.src('./test/mock/babelMock.dirty.js')
+.transform(footprint.Transform.babel)
+.dest('./dist/babelMock.transformed.js');
 ```
 
 <h3>Example</h3>
@@ -62,12 +92,14 @@ var output = footprint.Transform.babel(text);
 ```javascript
 var footprint = require('chickendinosaur-footprint');
 
-footprint.Transformer({
+gulp.task('footprint', function() {
+	footprint.Transformer({
 		debug:true
 	})
-	.src('./dist/someclass.bundle.js')
+	.src('./test/mock/usestrictMock.dirty.js')
 	.transform(footprint.Transform.usestrict)
-	.dest('./dist/someclass.footprint.js');
+	.dest('./dist/usestrictMock.transformed.js');
+});
 ```
 
 <h4>Before</h4>

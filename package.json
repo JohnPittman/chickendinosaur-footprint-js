@@ -1,6 +1,6 @@
 {
   "name": "chickendinosaur-footprint",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Consolidates redundant code based on the selected transform.",
   "main": "src/footprint.js",
   "keywords": [

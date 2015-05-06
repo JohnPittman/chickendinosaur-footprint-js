@@ -1,3 +1,9 @@
+/**
+ * @author John Pittman <johnrichardpittman@gmail.com>
+ */
+
+"use strict";
+
 var gulp = require('gulp');
 var jasmine = require('gulp-jasmine');
 var reporters = require('jasmine-reporters');
@@ -17,7 +23,7 @@ gulp.task('footprint', function() {
 	.src('./test/mock/usestrictMock.dirty.js')
 	.transform(footprint.Transform.usestrict)
 	.dest('./dist/usestrictMock.transformed.js')
-	// .src('./test/mock/babelMock.dirty.js')
-	// .transform(footprint.Transform.usestrict)
-	// .dest('./dist/babelMock.transformed.js');
+	.src('./test/mock/babelMock.dirty.js')
+	.transform(footprint.Transform.babel)
+	.dest('./dist/babelMock.transformed.js');
 });

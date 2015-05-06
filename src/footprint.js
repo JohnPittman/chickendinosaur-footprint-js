@@ -18,7 +18,7 @@ var FootprintTransformerTools = {
         return this;
     },
     dest: function(filePath) {
-        if (!fs.exists(path.dirname(filePath))) {
+        if (!fs.existsSync(path.dirname(filePath))) {
             fs.mkdirSync(path.dirname(filePath));
         }
 
