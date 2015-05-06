@@ -1,12 +1,16 @@
+/**
+ * @author John Pittman <johnrichardpittman@gmail.com>
+ */
+
 "use strict";
 
 var fs = require('fs'),
-    BabelCompressor = require('./../../src/BabelCompressor');
+    babelTransform = require('./../../src/babelTransform');
 
-describe("BabelCompressor", function() {
+describe("babelTransform", function() {
     it("Removes all redundant babel code.", function(done) {
         fs.readFile(__dirname+'/../mock/babelMock.dirty.js', 'utf-8', function(err, dirtyBabelFile) {
-            var convertedFile = BabelCompressor.compress(dirtyBabelFile);
+            var convertedFile = babelTransform(dirtyBabelFile);
 
             fs.readFile(__dirname+'/../mock/babelMock.clean.js', 'utf-8', function(err, cleanBabelFile) {
                 expect(convertedFile).toEqual(cleanBabelFile);

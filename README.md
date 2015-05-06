@@ -1,7 +1,7 @@
 <h1>Notes</h1>
 
-Gulp module for reorganizing redundant code. Each compressor can be used without gulp.
-Wrote this so I can be at peace migrating to ES6 early and using Browserify. Minimizes the footprint on concatinated files.
+Node module for reorganizing redundant code. Each Transform is just a method that takes in a text string and can be used by itself.
+Wrote this so I can be at peace migrating to ES6 early and using Browserify. Minimizes the footprint on Babel concatinated files like a Browserify bundle.
 Works on minified and non-minified code.
 
 Note: The regular expressions are currently in rough draft format so they will work on code minified with the 'uglify' module and babel formatted code and basic forms. As long as you do not purposely mangle the babel code formatting everything works fine.
@@ -24,30 +24,27 @@ gulp test
 
 npm install chickendinosaur-footprint
 
-<h3>How to use</h3>
+<h3>How To Use</h3>
 
-<h4>Compressors</h4>
+<h4>Transform types</h4>
 
-footprint.Compressor.UseStrict
-footprint.Compressor.Babel
+- footprint.Transform.usestrict
+- footprint.Transform.babel
 
-<h4>Gulp</h4>
+<h4>Using the transformer in debug</h4>
 
 ```javascript
 var footprint = require('chickendinosaur-footprint');
 
-gulp.task('footprint', function() {
-    footprint.setOptions({
-        debug: true // Outputs file size information from the compression.
-    });
-
-    return gulp.src('./babelBundle.js')
-        .pipe(footprint.compress(footprint.Compressor.Babel))
-        .pipe(gulp.dest('./dist'));
-});
+footprint.Transformer({
+		debug:true
+	})
+	.src('./dist/someclass.bundle.js')
+	.transform(footprint.Transform.babel)
+	.dest('./dist/someclass.footprint.js');
 ```
 
-<h4>Standalone</h4>
+<h4>Using a transform as standalone</h4>
 
 ```javascript
 var footprint = require('chickendinosaur-footprint');
@@ -55,21 +52,44 @@ var fs = require('fs');
 
 var text = fs.readFileSync('./babelBundle.js', 'utf-8');
 
-footprint.Compressor.Babel.compress(text);
+var output = footprint.Transform.babel(text);
 ```
 
 <h3>Example</h3>
 
-Two small classes using ES6 with Babel transpiler, Browserify with minimum babeling on the parent class.
+<h4>Using the footprint.Transform.usestrict Transform</h4>
+
+```javascript
+var footprint = require('chickendinosaur-footprint');
+
+footprint.Transformer({
+		debug:true
+	})
+	.src('./dist/someclass.bundle.js')
+	.transform(footprint.Transform.usestrict)
+	.dest('./dist/someclass.footprint.js');
+```
+
+<h4>Before</h4>
+
+'use strict'
+"use strict"
+'use strict';
+"use strict";
+
+<h4>After</h4>
+
+"use strict";
 
 <h4>Results</h4>
 
-- Before: 16.922 KB
-- After: 15.194 KB
-- Difference:
-- 1.7279999999999998 KB
-- 10.21155891738565 %
+<--- Transform: usestrict --->
+
+- Input: ./test/mock/usestrictMock.dirty.js
+- Before: 0.056 KB
+- After: 0.013000000000000001 KB
+- Differences:
+- 0.043 KB
+- 76.78571428571428 %
 
 <h1>Release Notes</h1>
-
-<h3></h3>

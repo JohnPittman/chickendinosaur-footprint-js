@@ -1,8 +1,8 @@
 {
   "name": "chickendinosaur-footprint",
-  "version": "0.0.2",
-  "description": "Consolidates redundant code based on the selected compressor.",
-  "main": "src/GulpFootprint.js",
+  "version": "0.1.0",
+  "description": "Consolidates redundant code based on the selected transform.",
+  "main": "src/footprint.js",
   "keywords": [
     "shrink",
     "footprint",
@@ -18,13 +18,12 @@
     "harmony",
     "usestrict",
     "compression",
-    "gulpplugin"
+    "transformer",
+    "transofrming"
   ],
   "author": "John Pittman <johnrichardpittman@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "gulp-util": "^3.0.4",
-    "through2": "^0.6.5"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
