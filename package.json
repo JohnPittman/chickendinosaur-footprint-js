@@ -3,9 +3,6 @@
   "version": "0.0.2",
   "description": "Consolidates redundant code based on the selected compressor.",
   "main": "src/GulpFootprint.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "shrink",
     "footprint",
