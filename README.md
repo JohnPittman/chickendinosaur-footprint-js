@@ -25,7 +25,7 @@ gulp test
 
 npm install chickendinosaur-footprint
 
-<h3>Usage</h3>
+<h3>How to use...</h3>
 
 <h4>Transform types</h4>
 
