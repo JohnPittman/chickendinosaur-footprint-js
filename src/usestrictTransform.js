@@ -4,7 +4,7 @@
 
 var header = '\"use strict\";'
 
-var expression = /['"]use strict['"];*(\r\n|\n|\r)*/g;
+var expression = /('|")use strict('|");*(\r\n|\n|\r)*/g;
 
 function usestrict(source, opts) {
     var convertedText = source.toString();

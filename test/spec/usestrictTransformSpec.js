@@ -10,10 +10,10 @@ var fs = require('fs'),
 describe("usestrictTransform", function() {
     it("Removes redundant \'use strict\' instances.", function(done) {
         fs.readFile(__dirname+'/../mock/usestrictMock.dirty.js', 'utf-8', function(err, dirtyFile) {
-            var convertedFile = usestrictTransform(dirtyFile);
+            var convertedFile = usestrictTransform(dirtyFile).trim();
 
             fs.readFile(__dirname+'/../mock/usestrictMock.clean.js', 'utf-8', function(err, cleanFile) {
-                expect(convertedFile).toEqual(cleanFile);
+                expect(convertedFile).toEqual(cleanFile.trim());
                 done();
             });
         });

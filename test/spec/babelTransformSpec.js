@@ -10,10 +10,10 @@ var fs = require('fs'),
 describe("babelTransform", function() {
     it("Removes all redundant babel code.", function(done) {
         fs.readFile(__dirname+'/../mock/babelMock.dirty.js', 'utf-8', function(err, dirtyBabelFile) {
-            var convertedFile = babelTransform(dirtyBabelFile);
+            var convertedFile = babelTransform(dirtyBabelFile).trim();
 
             fs.readFile(__dirname+'/../mock/babelMock.clean.js', 'utf-8', function(err, cleanBabelFile) {
-                expect(convertedFile).toEqual(cleanBabelFile);
+                expect(convertedFile).toEqual(cleanBabelFile.trim());
                 done();
             });
         });

@@ -1,10 +1,11 @@
 <h1>Notes</h1>
 
-Node module for reorganizing redundant code. Each Transform is just a method that takes in a text string and can be used by itself.
-Wrote this so I can be at peace migrating to ES6 early and using Browserify. Minimizes the footprint on Babel concatinated files like a Browserify bundle.
-Works on minified and non-minified code.
+Working with ES6, Babel/Babelify, Browserify? This is for you!
 
-Note: The regular expressions are currently in rough draft format so they will work on code minified with the 'uglify' module and babel formatted code and basic forms. As long as you do not purposely mangle the babel code formatting everything works fine.
+- Node module for reorganizing redundant code. Each Transform is just a method that takes in a text string and can be used by itself.
+- Wrote this so I can be at peace migrating to ES6 early and using Browserify and because being bloated bugs me *cough* jQuery. 
+- Minimizes the footprint on Babel concatinated files like a Browserify bundle.
+- Works on minified (minified with uglify) and non-minified code against any style formatting! (please report on any fails with a copy+paste of the section it failed on so I can fix)
 
 <h1>Development</h1>
 
@@ -24,7 +25,7 @@ gulp test
 
 npm install chickendinosaur-footprint
 
-<h3>How To Use</h3>
+<h3>Usage</h3>
 
 <h4>Transform types</h4>
 
@@ -115,13 +116,18 @@ gulp.task('footprint', function() {
 
 <h4>Results</h4>
 
-<--- Transform: usestrict --->
+---
 
-- Input: ./test/mock/usestrictMock.dirty.js
-- Before: 0.056 KB
-- After: 0.013000000000000001 KB
-- Differences:
-- 0.043 KB
-- 76.78571428571428 %
+Input:
+* ./test/mock/usestrictMock.dirty.js
+* 0.0560 KB
+Transform:
+* usestrict
+Difference:
+* 0.0430 KB
+* 76.7857 %
+Output:
+* ./dist/usestrictMock.transformed.js
+* 0.0130 KB
 
 <h1>Release Notes</h1>
