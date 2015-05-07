@@ -1,4 +1,4 @@
-<h1>Notes</h1>
+<h1>Footprint</h1>
 
 Working with ES6, Babel/Babelify, Browserify? This is for you!
 
