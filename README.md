@@ -5,7 +5,7 @@ Working with ES6, Babel/Babelify, Browserify? This is for you!
 - Node module for reorganizing redundant code. Each Transform is just a method that takes in a text string and can be used by itself.
 - Wrote this so I can be at peace migrating to ES6 early and using Browserify and because being bloated bugs me *cough* jQuery. 
 - Minimizes the footprint on Babel concatinated files like a Browserify bundle.
-- Works on minified (minified with uglify) and non-minified code against any style formatting! (please report on any fails with a copy+paste of the section it failed on so I can fix)
+- Works on minified (minified with uglify) and non-minified code against any style formatting! (the output is kept in original form for debuggin purposes so even though it will rip against uglified code, you will need to re-uglify after which uglifying should always be done last in the build process anyway)
 
 <h1>Development</h1>
 
@@ -134,3 +134,8 @@ Output:
 * 0.0130 KB
 
 <h1>Release Notes</h1>
+
+<h3>v0.1.6</h3>
+
+- Added consolidatoin for require/_interopRequireDefault statements.
+- Changed all output to original form instead of uglified version since you will have to uglify after anyway.

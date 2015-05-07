@@ -264,3 +264,11 @@ var _inherits = function(subClass, superClass) {
     });
     if (superClass) subClass.__proto__ = superClass;
 };
+
+var _SomeClassEs6Js = require('./SomeClass.es6.js');
+
+var _SomeClassEs6Js2 = _interopRequireDefault(_SomeClassEs6Js);
+
+var _ParentClassEs6Js = require('./ParentClass.es6.js');
+
+var _ParentClassEs6Js2 = _interopRequireDefault(_ParentClassEs6Js);
