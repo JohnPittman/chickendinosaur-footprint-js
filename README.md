@@ -121,11 +121,14 @@ gulp.task('footprint', function() {
 Input:
 * ./test/mock/usestrictMock.dirty.js
 * 0.0560 KB
+
 Transform:
 * usestrict
+
 Difference:
 * 0.0430 KB
 * 76.7857 %
+
 Output:
 * ./dist/usestrictMock.transformed.js
 * 0.0130 KB
