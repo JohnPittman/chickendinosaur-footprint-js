@@ -1,6 +1,6 @@
 {
   "name": "chickendinosaur-footprint",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Consolidates redundant code to reduce file size footprint based on the selected transform.",
   "main": "src/footprint.js",
   "keywords": [
