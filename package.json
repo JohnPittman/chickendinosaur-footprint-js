@@ -1,33 +1,44 @@
 {
-  "name": "chickendinosaur-footprint",
-  "version": "0.1.6",
-  "description": "Consolidates redundant code to reduce file size footprint based on the selected transform.",
-  "main": "src/footprint.js",
-  "keywords": [
-    "shrink",
-    "footprint",
-    "consolidate",
-    "babel",
-    "babelify",
-    "es6",
-    "require",
-    "module",
-    "browserify",
-    "minify",
-    "compressor",
-    "harmony",
-    "usestrict",
-    "compression",
-    "transformer",
-    "transofrming"
-  ],
-  "author": "John Pittman <johnrichardpittman@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-  },
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-jasmine": "^2.0.1",
-    "jasmine-reporters": "^2.0.6"
-  }
+    "name": "chickendinosaur-footprint",
+    "version": "0.1.8",
+    "description": "Consolidates redundant code to reduce file size footprint based on the selected transform.",
+    "main": "src/footprint.js",
+    "files": [
+        "src/**/*.js"
+    ],
+    "keywords": [
+        "shrink",
+        "footprint",
+        "consolidate",
+        "babel",
+        "babelify",
+        "es6",
+        "require",
+        "module",
+        "browserify",
+        "minify",
+        "compressor",
+        "harmony",
+        "usestrict",
+        "compression",
+        "transformer",
+        "transofrming"
+    ],
+    "author": "John Pittman <johnrichardpittman@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JohnPittman/chickendinosaur-footprint-js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/JohnPittman/chickendinosaur-footprint-js/issues"
+    },
+    "homepage": "https://github.com/JohnPittman/chickendinosaur-footprint-js",
+    "dependencies": {},
+    "devDependencies": {
+        "gulp": "^3.8.11",
+        "gulp-jasmine": "^2.0.1",
+        "jasmine-reporters": "^2.0.6"
+    }
+
 }
